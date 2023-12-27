@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Include Bootstrap CSS directly -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Define and customize your custom style -->
+  <style>
+    /* Скрываем Scrollbar */
+body {
+	scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar { 
+	display: none; /* Safari and Chrome */
+}
+    /* Define your custom primary color variable */
+    :root {
+      --bs-primary: linear-gradient(90deg, rgba(12,0,36,1) 0%, rgba(163,61,185,1) 60%);
+    }
+
+    /* Use your custom primary color for background and text */
+    .bg-primary {
+      background: var(--bs-primary) !important;
+    }
+
+    .text-primary {
+      color: var(--bs-primary) !important;
+    }
+
+    .p-primary{
+        color: rgba(163,61,185,1);
+        text-wrap: nowrap;
+        margin: 1%;
+    }
+
+    #input, input, select{
+        margin: 1%;
+    }
+
+    #center{
+        align-items: center;
+    }
+
+    .HOME, #HOME{
+        padding: 2% 1%;
+        display: flex;
+        overflow: auto;
+        align-items: center;
+    }
+
+    #HOME-1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+   
+
+    .card-header{
+        background: var(--bs-primary);
+        color: #fff;
+    }
+
+    .card{
+        margin: 2% 0;
+    }
+
+    .card-title, .card-text{
+        width: 100%;
+        height: 5%;
+        text-align: center;
+        margin: 0;
+    }
+
+    
+
+    /* Override Bootstrap's default primary color */
+    .navbar-brand, .navbar-nav .nav-link {
+      color: var(--bs-primary) !important;
+    }
+  </style>
+</head>
+<body style="height: 100vh;">
+
+  <!-- Your content with custom background color -->
+  <div class="container-fluid p-2 bg-primary text-white text-center">
+    <h1>Окно организатора</h1>
+  </div>
+  <div class="HOME" style="height: 85%;">
+    <div class="w-25 h-25 p-3">
+        <img class="w-100  p-3" src="{{Image}}">
+        <a type="button" style="padding: 10% 20%; margin:5%;margin-top: 30%; background-color: rgba(163,61,185,1);" class="btn btn-sm text-white" href="{% url 'prof' %}">Мой Профиль</a>
+    </div>
+    <div id="HOME-1" class="w-75 p-3 h-50" style="width: 60%; margin: 0 5%;">
+        <h2 class="card-title">{{Text}}</h2>
+        <h4 class="card-text">{{Name}}</h4>
+        <a type="button" style="padding: 0.5% 0%; margin:0% 20%; background-color: rgba(163,61,185,1);" class="btn btn-sm text-white w-50" href="my_events">Мероприятия</a>
+        <a type="button" style="padding: 0.5% 0%; margin:0% 20%; background-color: rgba(163,61,185,1);" class="btn btn-sm text-white w-50" href="my_people">Участники</a>
+        <a type="button" style="padding: 0.5% 0%; margin:0% 20%; background-color: rgba(163,61,185,1);" class="btn btn-sm text-white w-50" href="my_jury">Жюри</a>
+    </div>
+  </div>
+  <div id="center" class="text-purple text-center" style="display: flex; justify-content: start; padding: 0 3%;">
+    <a type="button" style="padding: 0.5% 1%; background-color: rgba(163,61,185,1);" class="btn btn-sm text-white" href="/">Назад</a>
+  </div>
+</body>
+</html>
